@@ -17,9 +17,6 @@ class MainActivity : AppCompatActivity(), MathOperation {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var a = binding.edText1.text
-        var b = binding.edText2.text
-
         binding.btnAddition.setOnClickListener {
             try {
                 addition()
