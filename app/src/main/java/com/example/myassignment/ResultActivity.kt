@@ -15,6 +15,6 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding.root)
         var result: String? = intent.getStringExtra("result")
 
-        binding.tvResult.text =result
+        binding.tvResult.text ="Result is "+result
     }
 }
