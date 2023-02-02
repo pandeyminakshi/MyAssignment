@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/tvNumber1"
+        style="@style/detailsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Number 1:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNumber2"
+        style="@style/detailsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Number 2:"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNumber1" />
+
+
+  <EditText
+      android:id="@+id/edText1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:singleLine="true"
+      android:inputType="number"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="@id/guideline"
+      app:layout_constraintTop_toTopOf="parent"
+      ></EditText>
+
+    <EditText
+        android:id="@+id/edText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/edText1" />
+
+    <Button
+        android:id="@+id/btnAddition"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="36dp"
+        android:text="Addition"
+        app:layout_constraintEnd_toStartOf="@+id/btnSub"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edText2" />
+
+    <Button
+        android:id="@+id/btnSub"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Subtraction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAddition"
+        app:layout_constraintTop_toBottomOf="@id/edText2" />
+
+    <Button
+        android:id="@+id/btnClear"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSub" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
