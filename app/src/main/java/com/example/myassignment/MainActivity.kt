@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity(), MathOperation {
         binding.btnAddition.setOnClickListener {
             try {
                 addition()
-           // var c = addition(a.toString().toInt(), b.toString().toInt())
-             //   startResultActivity(c)
             }catch (e: Exception) {
                 println(e)
             }
