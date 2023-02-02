@@ -9,6 +9,8 @@ import com.example.mylibrary.MathOperation
 
 class MainActivity : AppCompatActivity(), MathOperation {
     private lateinit var binding: ActivityMainBinding
+    private var a = ""
+    private var b = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +22,9 @@ class MainActivity : AppCompatActivity(), MathOperation {
 
         binding.btnAddition.setOnClickListener {
             try {
-            var c = addition(a.toString().toInt(), b.toString().toInt())
-                startResultActivity(c)
+                addition()
+           // var c = addition(a.toString().toInt(), b.toString().toInt())
+             //   startResultActivity(c)
             }catch (e: Exception) {
                 println(e)
             }
@@ -30,8 +33,7 @@ class MainActivity : AppCompatActivity(), MathOperation {
         binding.btnSub.setOnClickListener {
 
             try {
-                var c = subtraction(a.toString().toInt(), b.toString().toInt())
-                startResultActivity(c)
+               subtraction()
             } catch (e: Exception) {
                 println(e)
             }
@@ -50,6 +52,22 @@ class MainActivity : AppCompatActivity(), MathOperation {
         val intent = Intent(this@MainActivity, ResultActivity::class.java)
         intent.putExtra("result", c.toString())
         startActivity(intent)
+    }
+
+    override fun addition() {
+        a = binding.edText1.text.toString()
+        b = binding.edText2.text.toString()
+
+        var c:Int = a.toInt()+b.toInt()
+        startResultActivity(c)
+    }
+
+    override fun subtraction() {
+        a = binding.edText1.text.toString()
+        b = binding.edText2.text.toString()
+
+        var c:Int = a.toInt()-b.toInt()
+        startResultActivity(c)
     }
 
 }
